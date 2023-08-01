@@ -47,20 +47,50 @@ class ChatGptMult:
 
         # 单独获取结果并打印，并作为函数返回结果
         response_content = response_dit["content"]
-        print(response_content)
+        print("GPT:" + response_content)
         return response_content
 
 def loop():
     while True:
         try:
-            prompt =  input("请输入你的问题：")
+            prompt =  input("You：")
             chatgptmult = ChatGptMult()
             chatgptmult.chatmult(username,prompt,system_content)
         except KeyboardInterrupt:
             break
 
+def whichusername():
+    usernamelist = []
+    usernamelist_str = ""
+    i = 1
+    for filename in os.listdir(os.path.join(os.getcwd(),"log")):
+        filename = filename.replace(".json","")
+        usernamelist.append(filename)
+        usernamelist_str = usernamelist_str + str(i) + "、" + filename + ";"
+        i = i + 1
+    print(usernamelist_str)
+    username_index = input("选择数字进入对应会话，输入0创建新会话：")
+    try:
+        username_index = int(username_index) 
+    except ValueError as e:
+        print("ValueError:", e) 
+
+    if username_index<0 or username_index > len(usernamelist):
+        # 判断是不是小于现有的长度
+        print("输入错误") 
+    elif username_index == 0:
+        # 创建新会话
+        username = input("请输入一个会话名称：")
+        system_content = input("请输入这个会话对应的system定义。")
+        if system_content == "":
+            system_content = "你是一个有用的智能助手。"
+    else:
+        username = usernamelist[username_index]
+
+
 
 if __name__ == '__main__':
-    system_content =  "你是一个有用的智能助手。"
-    username = input("请输入一个用户名：")
+    whichusername()
+    # system_content =  "你是一个有用的智能助手。"
+    # username = input("请输入一个用户名：")
     loop()
