@@ -101,5 +101,25 @@
             },
             "required": ["text"]
         }
+    },
+    {
+        "name": "turtleimg",
+        "description": "可以根据指令进行绘画。",
+        "keyword":"使用绘画插件",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "direction": {
+                    "type": "string",
+                    "enum": ["forward", "backward","right","left","circle"],
+                    "description": "forward为当前方向，backward为相反方向，right为向右旋转指定角度，left为向左旋转指定角度，circle为绘制一个圆形。"
+                },
+                "distance": {
+                    "type": "integer",
+                    "description": "当direction为forward和backward时为移动的距离，当direction为right和left时为旋转的角度，当direction为circle时为圆圈的半径。"
+                }
+            },
+            "required": ["direction","distance"]
+        }
     }
 ]

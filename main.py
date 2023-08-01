@@ -3,7 +3,7 @@ import os
 import json
 import os
 import copy
-from . import azureopenaifunctionplugin
+import azureopenaifunctionplugin
 
 class ChatGptMult:
     def __init__(self):
@@ -47,12 +47,20 @@ class ChatGptMult:
 
         # 单独获取结果并打印，并作为函数返回结果
         response_content = response_dit["content"]
-        # print(response_content)
+        print(response_content)
         return response_content
+
+def loop():
+    while True:
+        try:
+            prompt =  input("请输入你的问题：")
+            chatgptmult = ChatGptMult()
+            chatgptmult.chatmult(username,prompt,system_content)
+        except KeyboardInterrupt:
+            break
+
 
 if __name__ == '__main__':
     system_content =  "你是一个有用的智能助手。"
     username = input("请输入一个用户名：")
-    prompt =  input("请输入你的问题：")
-    chatgptmult = ChatGptMult()
-    chatgptmult.chatmult(username,prompt,system_content)
+    loop()
