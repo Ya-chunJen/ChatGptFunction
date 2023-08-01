@@ -4,7 +4,6 @@ import json
 import openai
 import configparser
 import importlib
-import copy
 
 config = configparser.ConfigParser()
 config.read(os.path.join(os.getcwd(), "config.ini"),encoding="UTF-8")
