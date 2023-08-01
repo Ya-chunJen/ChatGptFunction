@@ -52,7 +52,7 @@ class ChatGptMult:
 
 if __name__ == '__main__':
     system_content =  "你是一个有用的智能助手。"
-    username = "1"
+    username = input("请输入一个用户名：")
     prompt =  input("请输入你的问题：")
     chatgptmult = ChatGptMult()
     chatgptmult.chatmult(username,prompt,system_content)
