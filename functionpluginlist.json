@@ -89,14 +89,14 @@
     },
     {
         "name": "posttoqw",
-        "description": "可以将一个字符串推送到一个企业微信群中。",
+        "description": "可以将用户发送的内容完整的推送到企业微信群聊中。",
         "keyword":"使用企业微信插件",
         "parameters": {
             "type": "object",
             "properties": {
                 "text": {
                     "type": "string",
-                    "description": "要推送到企业微信群中的消息。"
+                    "description": "要推送到企业微信群中的消息，用户发送的内容是什么就推送什么。"
                 }
             },
             "required": ["text"]
