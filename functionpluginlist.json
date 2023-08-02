@@ -43,7 +43,7 @@
                     "description": "邮件的主题。"
                 }
             },
-            "required": ["mail_to_name","mail_subject","mail_body_text"]
+            "required": ["analytical_id","analytical_methods","analysis_questions"]
         }
     },
     {
