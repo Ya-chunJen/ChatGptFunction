@@ -121,5 +121,24 @@
             },
             "required": ["direction","distance"]
         }
+    },
+    {
+        "name": "aliyunossup",
+        "description": "可以将文件上传到阿里云对象存储的指定目录。",
+        "keyword":"使用阿里云上传文件插件",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "file_path": {
+                    "type": "string",
+                    "description": "本地文件的完整路径。"
+                },
+                "file_dir": {
+                    "type": "string",
+                    "description": "要上传到对象存储的目录，目录不需要加任何的/标识符。"
+                }
+            },
+            "required": ["file_path","file_dir"]
+        }
     }
 ]

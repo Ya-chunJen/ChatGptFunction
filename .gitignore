@@ -18,3 +18,10 @@ ChatGptFunction.command
 functionplugin/__pycache__/posttoqw.cpython-310.pyc
 functionplugin/__pycache__/wjxanalysis.cpython-310.pyc
 functionplugin/__pycache__/wjxwjlist.cpython-310.pyc
+build/ChatGptFunction/base_library.zip
+ChatGptFunction.spec
+build/
+Buildfile/
+main.spec
+dist/
+functionplugin/__pycache__/aliyunossup.cpython-310.pyc
