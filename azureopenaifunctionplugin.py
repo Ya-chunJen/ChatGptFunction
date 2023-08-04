@@ -71,7 +71,7 @@ def chatGPT_with_plugin(prompt_messages,function_call="none"):
             # print(functions_thistime)
             prompt_messages[-1]["content"] = prompt_messages[-1]["content"].replace(function_keyword, "")
             prompt_messages[-2]["content"] = prompt_messages[-2]["content"].replace(function_keyword, "")
-            prompt_messages[0]["content"] = "不要假设或虚构任何arguments字段中的值，如果需要更多内容，请想我索要或确认。"
+            prompt_messages[0]["content"] = "Don't make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."
             break
     
     if function_call == "none" :
@@ -80,8 +80,8 @@ def chatGPT_with_plugin(prompt_messages,function_call="none"):
         response_message = chatGPT(prompt_messages)
         return response_message
     
-    # print("调用函数前的prompt_message")
-    # print(prompt_messages)
+    print("调用函数前的prompt_message")
+    print(prompt_messages)
     completion = openai.ChatCompletion.create(
         deployment_id = modelname,
         messages = prompt_messages,
