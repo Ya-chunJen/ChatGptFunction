@@ -27,3 +27,4 @@ dist/
 functionplugin/__pycache__/aliyunossup.cpython-310.pyc
 __pycache__/azureopenaifunctionplugin.cpython-39.pyc
 functionplugin/__pycache__/search.cpython-39.pyc
+functionplugin/__pycache__/search.cpython-310.pyc
